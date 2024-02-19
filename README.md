@@ -16,8 +16,8 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 1. Single Static Page with Dynamic Data:
- # Create one static page that displays user profiles from a mock API or statistics fetched from a mock API.
- # Implement basic styling with Tailwind CSS to ensure readability and a clean layout.
+ #### Create one static page that displays user profiles from a mock API or statistics fetched from a mock API.
+ #### Implement basic styling with Tailwind CSS to ensure readability and a clean layout.
  Solution : 
  Since Next.js relies on the nested folder structure to call apis and generate routes we will create the folder structure and name the files appropriately so the hook can easily query that file when requested.
 
@@ -29,7 +29,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - We also define tailwindCSS styles to make the fonts and colors more readable
 
 ## 2. Dynamic Routing:
- # Set up a dynamic route that allows users to view details for an individual item when selecting an item from the list.
+ #### Set up a dynamic route that allows users to view details for an individual item when selecting an item from the list.
     To create a dynamic route so the user can navigate to a particular user profile using the url or clicking on a name in the list, we use this codeblock 
 ```
 <Link href={`/users/${user.id}`} passHref>
@@ -41,7 +41,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     that creates a clickable element that navigates to the user's details page based on the user id extracted when clicked, without refreshing the entire page. The user's name appears as the clickable text, and it will underline on hover to give a visual indication that it is a link.
 
 ## 3.Server Action:
- # Set up one server action that performs a simple operation, such as incrementing a counter (this could simulate "liking" a profile or updating a statistic).
+ #### Set up one server action that performs a simple operation, such as incrementing a counter (this could simulate "liking" a profile or updating a statistic).
  - We start by creating a new file `[id].tsx` in our `api/like` and `users` folder. 
  - In our file in the `api/like/[id].tsx` folder we start off by creating a likes object that initializes all the userIds with the number of likes they have initially.
 - Then we define a handler function that extracts the id from the query parameter. It then checks the request method, if its `POST` then it proceeds with incrementing the counter from the likes object we created.
