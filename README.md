@@ -23,14 +23,17 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
  - For displaying mock data create a file `mock-data.ts` with the mock object. We also define a handler function which will display the `mockUsers`object array when the status is 200 ie the api is functional
 - The `index.tsx` is the main page where we will see the mock data being generated. We will use `useSWR hook` to fetch the mock data 
-```const { data, error } = useSWR("/api/mock-data", fetcher);
+```
+const { data, error } = useSWR("/api/mock-data", fetcher);
+
 ```
 - We will also have error and loading states defined for easy debugging and data flow clarity
 - We also define tailwindCSS styles to make the fonts and colors more readable
 
 ## 2. Dynamic Routing:
  #### Set up a dynamic route that allows users to view details for an individual item when selecting an item from the list.
-    To create a dynamic route so the user can navigate to a particular user profile using the url or clicking on a name in the list, we use this codeblock 
+To create a dynamic route so the user can navigate to a particular user profile using the url or clicking on a name in the list, we use this codeblock 
+
 ```
 <Link href={`/users/${user.id}`} passHref>
                 <span className="text-black hover:underline cursor-pointer">
@@ -38,7 +41,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
                 </span>
                 </Link>  
 ```
-    that creates a clickable element that navigates to the user's details page based on the user id extracted when clicked, without refreshing the entire page. The user's name appears as the clickable text, and it will underline on hover to give a visual indication that it is a link.
+that creates a clickable element that navigates to the user's details page based on the user id extracted when clicked, without refreshing the entire page. The user's name appears as the clickable text, and it will underline on hover to give a visual indication that it is a link.
 
 ## 3.Server Action:
  #### Set up one server action that performs a simple operation, such as incrementing a counter (this could simulate "liking" a profile or updating a statistic).
@@ -53,15 +56,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - If the reset button is clicked, the `handleReset` function is called. This function finds the originalUser using the userId from the request query. If its successful then it tries to initiate a `PUT` request to the api for that user with the userId and the json body includes the original count of likes from the originalUser in mockUser object. The Content-Type header is set to application/json to inform the server that the request body format is JSON.
 - If the server responds with an HTTP status code that indicates success (response.ok is true), the function assumes the like count has been successfully reset on the server.
 The function then updates the local component state variable likes with the new like count received from the server response. Otherwise the error is logged on the console.
-
-
-
-
-
-
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
