@@ -1,4 +1,3 @@
-// pages/index.tsx
 import type { NextPage } from "next";
 import useSWR from "swr";
 import Link from "next/link";

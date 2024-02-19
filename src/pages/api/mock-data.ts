@@ -1,4 +1,3 @@
-// pages/api/mock-data.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export type UserType = {
